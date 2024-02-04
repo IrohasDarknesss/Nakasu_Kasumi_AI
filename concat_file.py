@@ -1,6 +1,6 @@
 import os
 
-in_path = [
+jsut_v1 = [
     'jsut_ver1.1/basic5000/',
     'jsut_ver1.1/countersuffix26/',
     'jsut_ver1.1/loanword128/',
@@ -11,3 +11,12 @@ in_path = [
     'jsut_ver1.1/utparaphrase512/',
     'jsut_ver1.1/voiceactress100/'
 ]
+
+output = ['filelists/']
+
+os.makedirs(output, exist_ok=True)
+
+with open(output+'transctipt_utf8.txt', 'w') as wf:
+    for in_path in jsut_v1:
+        with open(in_path+'transctipt_utf8.txt', 'r') as rf:
+            wf.write(rf.read())
